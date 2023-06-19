@@ -1,0 +1,4 @@
+services:
+  wordpress:
+    volumes:
+      - ${WP_THEME_FOLDER_PATH}:/var/www/html/wp-content/themes/${WP_THEME_FOLDER_NAME}
