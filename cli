@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Get the script name (first argument) and remove it from the argument list
+script=$1
+shift
+
+# Check if the script name is provided
+if [ -z "$script" ]; then
+    echo "Usage: $0 <script_name> [options]"
+    exit 1
+fi
+
+# Check if the specified script exists
+if [ ! -f "scripts/$script.sh" ]; then
+    echo "Error: '$script.sh' not found in the 'scripts' folder"
+    exit 1
+fi
+
+# Execute the script with the provided options and arguments
+sh "scripts/$script.sh" "$@"
