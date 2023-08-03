@@ -62,6 +62,9 @@ To use the cli.sh file you should to run this command: `chmod +x cli`
 
 ### Clean
 
+
+#### Usage
+
 ```sh
 ./cli clean
 ```
@@ -75,6 +78,8 @@ You can pass every option of  `down` command of docker compose.
 ---
 
 ### Install
+
+#### Usage
 
 ```sh
 ./cli install
@@ -90,6 +95,8 @@ No options.
 
 ### Link Theme
 
+#### Usage
+
 ```sh
 ./cli link:theme my-theme-path
 ```
@@ -99,12 +106,16 @@ Run a watcher for source directory and rsync it into ./volumes/wordpress/themes.
 
 Internally, it use [watchman](https://facebook.github.io/watchman/) because docker volume api do not work with symbolic links. So the link-like strategy is "watch and rsync".
 
+Use unlink:theme to unlink.
+
 #### Options
 No options.
 
 ---
 
 ### Link Plugin
+
+#### Usage
 
 ```sh
 ./cli link:plugin my-theme-path
@@ -115,12 +126,16 @@ Run a watcher for source directory and rsync it into ./volumes/wordpress/plugins
 
 Internally, it use [watchman](https://facebook.github.io/watchman/) because docker volume api do not work with symbolic links. So the link-like strategy is "watch and rsync".
 
+Use unlink:plugin to unlink.
+
 #### Options
 No options.
 
 ---
 
 ### Start
+
+#### Usage
 
 ```sh
 ./cli start
@@ -136,6 +151,8 @@ You can pass every option of  `up` command of docker compose.
 
 ### Stop
 
+#### Usage
+
 ```sh
 ./cli stop
 ```
@@ -145,6 +162,38 @@ Install necessary things to allow to use correctly the docker-wordpress.
 
 #### Options
 You can pass every option of  `down` command of docker compose.
+
+--- 
+
+### Unlink Plugin
+
+#### Usage
+
+```sh
+./cli unlink:plugin my-theme-path
+```
+
+#### Description
+Stop the watcher for source directory and remove directory from ./volumes/wordpress/plugins.
+
+#### Options
+No options.
+
+---
+
+### Unlink theme
+
+#### Usage
+
+```sh
+./cli unlink:theme my-theme-path
+```
+
+#### Description
+Stop the watcher for source directory and remove directory from ./volumes/wordpress/themes.
+
+#### Options
+No options.
 
 ## Platform Compatibility
 
