@@ -1,6 +1,6 @@
 services:
   wordpress:
-    image: wordpress:6.2.0-apache
+    image: wordpress:6.5.5-php8.3-apache
     restart: always
     ports:
       - ${WP_PORT:-8080}:80
@@ -21,7 +21,7 @@ services:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
-      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+      MYSQL_RANDOM_ROOT_PASSWORD: "1"
     volumes:
       - db:/var/lib/mysql
       - ./volumes/mysql:/home
